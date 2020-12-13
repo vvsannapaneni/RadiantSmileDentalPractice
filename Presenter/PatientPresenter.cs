@@ -34,22 +34,34 @@ namespace DentalPractice.Presenter
             _view.IsNhs = patient.IsNhs;
             _view.Address = patient.Address;
             _view.MedicalHistory = patient.MedicalHistory;
-           
+            _view.Email = patient.Email;
+            _view.GpAddress = patient.GpAddress;
+            _view.GpName = patient.GpName;
+            _view.MedicalHistory = patient.MedicalHistory;
+
         }
 
         public int Save()
         {
-            Model.Patients patient = new Model.Patients { PatientId=_view.PatientId ,PatientName = _view.PatientName, Address = _view.Address,
-                DateOfBirth = Convert.ToDateTime(_view.DateOfBirth)
-            ,IsNhs=_view.IsNhs};
-           int isDataSaved = _repository.SavePatient(_view.PatientId, patient);
+            Model.Patients patient = new Model.Patients
+            {
+                PatientId = _view.PatientId,
+                PatientName = _view.PatientName,
+                Address = _view.Address,
+                DateOfBirth = Convert.ToDateTime(_view.DateOfBirth),
+                Email= _view.Email,
+                IsNhs = _view.IsNhs,
+                GpName=_view.GpName,
+                GpAddress=_view.GpAddress
+            };
+            int isDataSaved = _repository.SavePatient(_view.PatientId, patient);
             UpdateCustomerListView();
             return isDataSaved;
         }
 
         public int Delete(int patientid)
         {
-           int isDeleted=  _repository.DeletePatient(patientid);
+            int isDeleted = _repository.DeletePatient(patientid);
             UpdateCustomerListView();
             return isDeleted;
         }

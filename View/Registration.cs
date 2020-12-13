@@ -33,19 +33,20 @@ namespace WindowsFormsApp1.View
         public string Address { get { return this.txtPatientAddress.Text; } set { this.txtPatientAddress.Text = value; } }
         public DateTime? DateOfBirth { get { return Convert.ToDateTime(dateTimePicker1.Text); } set { this.dateTimePicker1.Text = value.ToString(); } }
         public bool IsNhs { get { return Convert.ToBoolean(chkIsNhs.Text); } set { this.chkIsNhs.Text = value.ToString(); } }
-        public PatientPresenter Presenter { get; set; }
         public int SelectedPatient { get { return PatientId; } set { PatientId = value; } }
         public string MedicalHistory { get { return Convert.ToString(txtPatientHistory.Text); } set { this.txtPatientHistory.Text = value; } }
         public string Email { get { return Convert.ToString(txtPatientEmail.Text); } set { this.txtPatientEmail.Text = value.ToString(); } }
         public DateTime LastVisitedDate { get => new DateTime(); set => this.LastVisitedDate = value; }
-        public string GpName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string GpAddress { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string GpName { get { return txtGpName.Text; } set { txtGpName.Text = value ; } }
+        public string GpAddress { get { return txtGpAddress.Text; } set { txtGpAddress.Text = value; } }
+        public PatientPresenter Presenter { get; set; }
+
 
         private void Registration_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dentalPracticeDataSet.Patients' table. You can move, or remove it, as needed.
-            this.patientsTableAdapter.Fill(this.dentalPracticeDataSet.Patients);
-
+            // TODO: This line of code loads data into the 'dentalPracticeDataSet1.Patients' table. You can move, or remove it, as needed.
+            this.patientsTableAdapter.Fill(this.dentalPracticeDataSet1.Patients);
+            // TODO: This line of code loads data into the 'dentalPracticeDataSet2.Patients' table. You can move, or remove it, as needed.
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(DataGridView.DefaultFont, FontStyle.Bold);
             this.chkIsNhs.Checked = chkIsNhs.Checked ? true : false;
             this.txtPatientId.Hide();
@@ -73,13 +74,13 @@ namespace WindowsFormsApp1.View
             var columnId = e.ColumnIndex;
             var selectedID = dataGridView1.Rows[rowId].Cells[0].Value;
 
-            if (columnId == 8)
+            if (columnId == 10)
             {
                 chkIsNhs.Checked = Convert.ToBoolean(dataGridView1.Rows[rowId].Cells[6].Value);
                 txtPatientId.Text = selectedID?.ToString();
                 Presenter.Edit(Convert.ToInt32(selectedID));
             }
-            else if (columnId == 9)
+            else if (columnId == 11)
             {
                 int isDeleted = Presenter.Delete(Convert.ToInt32(selectedID));
                 if (isDeleted > 0)
@@ -163,5 +164,44 @@ namespace WindowsFormsApp1.View
             this.chkIsNhs.Checked = this.chkIsNhs.Checked ? true : false;
             this.IsNhs = chkIsNhs.Checked ? true : false;
         }
+
+        //private void fillByToolStripButton_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        this.patientsTableAdapter1.FillBy(this.dentalPracticeDataSet1.Patients);
+        //    }
+        //    catch (System.Exception ex)
+        //    {
+        //        System.Windows.Forms.MessageBox.Show(ex.Message);
+        //    }
+
+        //}
+
+        //private void fillByToolStripButton1_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        this.patientsTableAdapter.FillBy(this.dentalPracticeDataSet.Patients);
+        //    }
+        //    catch (System.Exception ex)
+        //    {
+        //        System.Windows.Forms.MessageBox.Show(ex.Message);
+        //    }
+
+        //}
+
+        //private void fillByToolStripButton2_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        this.patientsTableAdapter.FillBy(this.dentalPracticeDataSet.Patients);
+        //    }
+        //    catch (System.Exception ex)
+        //    {
+        //        System.Windows.Forms.MessageBox.Show(ex.Message);
+        //    }
+
+        //}
     }
 }

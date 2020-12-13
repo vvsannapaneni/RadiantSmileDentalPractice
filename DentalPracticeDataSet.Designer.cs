@@ -24,7 +24,7 @@ namespace WindowsFormsApp1 {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DentalPracticeDataSet : global::System.Data.DataSet {
         
-        private PatientsDataTable tablePatients;
+        private PracticeStaffsDataTable tablePracticeStaffs;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace WindowsFormsApp1 {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Patients"] != null)) {
-                    base.Tables.Add(new PatientsDataTable(ds.Tables["Patients"]));
+                if ((ds.Tables["PracticeStaffs"] != null)) {
+                    base.Tables.Add(new PracticeStaffsDataTable(ds.Tables["PracticeStaffs"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace WindowsFormsApp1 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PatientsDataTable Patients {
+        public PracticeStaffsDataTable PracticeStaffs {
             get {
-                return this.tablePatients;
+                return this.tablePracticeStaffs;
             }
         }
         
@@ -152,8 +152,8 @@ namespace WindowsFormsApp1 {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Patients"] != null)) {
-                    base.Tables.Add(new PatientsDataTable(ds.Tables["Patients"]));
+                if ((ds.Tables["PracticeStaffs"] != null)) {
+                    base.Tables.Add(new PracticeStaffsDataTable(ds.Tables["PracticeStaffs"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace WindowsFormsApp1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablePatients = ((PatientsDataTable)(base.Tables["Patients"]));
+            this.tablePracticeStaffs = ((PracticeStaffsDataTable)(base.Tables["PracticeStaffs"]));
             if ((initTable == true)) {
-                if ((this.tablePatients != null)) {
-                    this.tablePatients.InitVars();
+                if ((this.tablePracticeStaffs != null)) {
+                    this.tablePracticeStaffs.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace WindowsFormsApp1 {
             this.Namespace = "http://tempuri.org/DentalPracticeDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablePatients = new PatientsDataTable();
-            base.Tables.Add(this.tablePatients);
+            this.tablePracticeStaffs = new PracticeStaffsDataTable();
+            base.Tables.Add(this.tablePracticeStaffs);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializePatients() {
+        private bool ShouldSerializePracticeStaffs() {
             return false;
         }
         
@@ -270,31 +270,37 @@ namespace WindowsFormsApp1 {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void PatientsRowChangeEventHandler(object sender, PatientsRowChangeEvent e);
+        public delegate void PracticeStaffsRowChangeEventHandler(object sender, PracticeStaffsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PatientsDataTable : global::System.Data.TypedTableBase<PatientsRow> {
+        public partial class PracticeStaffsDataTable : global::System.Data.TypedTableBase<PracticeStaffsRow> {
             
-            private global::System.Data.DataColumn columnPatientId;
+            private global::System.Data.DataColumn columnStaffId;
             
-            private global::System.Data.DataColumn columnPatientName;
+            private global::System.Data.DataColumn columnStaffName;
             
-            private global::System.Data.DataColumn columnAddress;
+            private global::System.Data.DataColumn columnSpecialization;
             
-            private global::System.Data.DataColumn columnLastVisitedDate;
+            private global::System.Data.DataColumn columnSpecializationDesc;
             
-            private global::System.Data.DataColumn columnIsNhs;
+            private global::System.Data.DataColumn columnStatus;
             
-            private global::System.Data.DataColumn columnDateOfBirth;
+            private global::System.Data.DataColumn columnStatusDescription;
+            
+            private global::System.Data.DataColumn columnApplyLeave;
+            
+            private global::System.Data.DataColumn columnLeaveFrom;
+            
+            private global::System.Data.DataColumn columnLeaveTo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PatientsDataTable() {
-                this.TableName = "Patients";
+            public PracticeStaffsDataTable() {
+                this.TableName = "PracticeStaffs";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -302,7 +308,7 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal PatientsDataTable(global::System.Data.DataTable table) {
+            internal PracticeStaffsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -319,56 +325,80 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected PatientsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected PracticeStaffsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PatientIdColumn {
+            public global::System.Data.DataColumn StaffIdColumn {
                 get {
-                    return this.columnPatientId;
+                    return this.columnStaffId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PatientNameColumn {
+            public global::System.Data.DataColumn StaffNameColumn {
                 get {
-                    return this.columnPatientName;
+                    return this.columnStaffName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AddressColumn {
+            public global::System.Data.DataColumn SpecializationColumn {
                 get {
-                    return this.columnAddress;
+                    return this.columnSpecialization;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn LastVisitedDateColumn {
+            public global::System.Data.DataColumn SpecializationDescColumn {
                 get {
-                    return this.columnLastVisitedDate;
+                    return this.columnSpecializationDesc;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IsNhsColumn {
+            public global::System.Data.DataColumn StatusColumn {
                 get {
-                    return this.columnIsNhs;
+                    return this.columnStatus;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DateOfBirthColumn {
+            public global::System.Data.DataColumn StatusDescriptionColumn {
                 get {
-                    return this.columnDateOfBirth;
+                    return this.columnStatusDescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ApplyLeaveColumn {
+                get {
+                    return this.columnApplyLeave;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LeaveFromColumn {
+                get {
+                    return this.columnLeaveFrom;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LeaveToColumn {
+                get {
+                    return this.columnLeaveTo;
                 }
             }
             
@@ -383,57 +413,60 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PatientsRow this[int index] {
+            public PracticeStaffsRow this[int index] {
                 get {
-                    return ((PatientsRow)(this.Rows[index]));
+                    return ((PracticeStaffsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PatientsRowChangeEventHandler PatientsRowChanging;
+            public event PracticeStaffsRowChangeEventHandler PracticeStaffsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PatientsRowChangeEventHandler PatientsRowChanged;
+            public event PracticeStaffsRowChangeEventHandler PracticeStaffsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PatientsRowChangeEventHandler PatientsRowDeleting;
+            public event PracticeStaffsRowChangeEventHandler PracticeStaffsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PatientsRowChangeEventHandler PatientsRowDeleted;
+            public event PracticeStaffsRowChangeEventHandler PracticeStaffsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddPatientsRow(PatientsRow row) {
+            public void AddPracticeStaffsRow(PracticeStaffsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PatientsRow AddPatientsRow(string PatientName, string Address, System.DateTime LastVisitedDate, bool IsNhs, System.DateTime DateOfBirth) {
-                PatientsRow rowPatientsRow = ((PatientsRow)(this.NewRow()));
+            public PracticeStaffsRow AddPracticeStaffsRow(string StaffName, int Specialization, string SpecializationDesc, int Status, string StatusDescription, bool ApplyLeave, System.DateTime LeaveFrom, System.DateTime LeaveTo) {
+                PracticeStaffsRow rowPracticeStaffsRow = ((PracticeStaffsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        PatientName,
-                        Address,
-                        LastVisitedDate,
-                        IsNhs,
-                        DateOfBirth};
-                rowPatientsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPatientsRow);
-                return rowPatientsRow;
+                        StaffName,
+                        Specialization,
+                        SpecializationDesc,
+                        Status,
+                        StatusDescription,
+                        ApplyLeave,
+                        LeaveFrom,
+                        LeaveTo};
+                rowPracticeStaffsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPracticeStaffsRow);
+                return rowPracticeStaffsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PatientsRow FindByPatientId(int PatientId) {
-                return ((PatientsRow)(this.Rows.Find(new object[] {
-                            PatientId})));
+            public PracticeStaffsRow FindByStaffId(int StaffId) {
+                return ((PracticeStaffsRow)(this.Rows.Find(new object[] {
+                            StaffId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PatientsDataTable cln = ((PatientsDataTable)(base.Clone()));
+                PracticeStaffsDataTable cln = ((PracticeStaffsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -441,74 +474,84 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PatientsDataTable();
+                return new PracticeStaffsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnPatientId = base.Columns["PatientId"];
-                this.columnPatientName = base.Columns["PatientName"];
-                this.columnAddress = base.Columns["Address"];
-                this.columnLastVisitedDate = base.Columns["LastVisitedDate"];
-                this.columnIsNhs = base.Columns["IsNhs"];
-                this.columnDateOfBirth = base.Columns["DateOfBirth"];
+                this.columnStaffId = base.Columns["StaffId"];
+                this.columnStaffName = base.Columns["StaffName"];
+                this.columnSpecialization = base.Columns["Specialization"];
+                this.columnSpecializationDesc = base.Columns["SpecializationDesc"];
+                this.columnStatus = base.Columns["Status"];
+                this.columnStatusDescription = base.Columns["StatusDescription"];
+                this.columnApplyLeave = base.Columns["ApplyLeave"];
+                this.columnLeaveFrom = base.Columns["LeaveFrom"];
+                this.columnLeaveTo = base.Columns["LeaveTo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnPatientId = new global::System.Data.DataColumn("PatientId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPatientId);
-                this.columnPatientName = new global::System.Data.DataColumn("PatientName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPatientName);
-                this.columnAddress = new global::System.Data.DataColumn("Address", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAddress);
-                this.columnLastVisitedDate = new global::System.Data.DataColumn("LastVisitedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLastVisitedDate);
-                this.columnIsNhs = new global::System.Data.DataColumn("IsNhs", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIsNhs);
-                this.columnDateOfBirth = new global::System.Data.DataColumn("DateOfBirth", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDateOfBirth);
+                this.columnStaffId = new global::System.Data.DataColumn("StaffId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStaffId);
+                this.columnStaffName = new global::System.Data.DataColumn("StaffName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStaffName);
+                this.columnSpecialization = new global::System.Data.DataColumn("Specialization", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSpecialization);
+                this.columnSpecializationDesc = new global::System.Data.DataColumn("SpecializationDesc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSpecializationDesc);
+                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatus);
+                this.columnStatusDescription = new global::System.Data.DataColumn("StatusDescription", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatusDescription);
+                this.columnApplyLeave = new global::System.Data.DataColumn("ApplyLeave", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApplyLeave);
+                this.columnLeaveFrom = new global::System.Data.DataColumn("LeaveFrom", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLeaveFrom);
+                this.columnLeaveTo = new global::System.Data.DataColumn("LeaveTo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLeaveTo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnPatientId}, true));
-                this.columnPatientId.AutoIncrement = true;
-                this.columnPatientId.AutoIncrementSeed = -1;
-                this.columnPatientId.AutoIncrementStep = -1;
-                this.columnPatientId.AllowDBNull = false;
-                this.columnPatientId.ReadOnly = true;
-                this.columnPatientId.Unique = true;
-                this.columnPatientName.MaxLength = 2147483647;
-                this.columnAddress.MaxLength = 2147483647;
-                this.columnLastVisitedDate.AllowDBNull = false;
-                this.columnIsNhs.AllowDBNull = false;
-                this.columnDateOfBirth.AllowDBNull = false;
+                                this.columnStaffId}, true));
+                this.columnStaffId.AutoIncrement = true;
+                this.columnStaffId.AutoIncrementSeed = -1;
+                this.columnStaffId.AutoIncrementStep = -1;
+                this.columnStaffId.AllowDBNull = false;
+                this.columnStaffId.ReadOnly = true;
+                this.columnStaffId.Unique = true;
+                this.columnStaffName.MaxLength = 2147483647;
+                this.columnSpecialization.AllowDBNull = false;
+                this.columnSpecializationDesc.MaxLength = 2147483647;
+                this.columnStatus.AllowDBNull = false;
+                this.columnStatusDescription.MaxLength = 2147483647;
+                this.columnApplyLeave.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PatientsRow NewPatientsRow() {
-                return ((PatientsRow)(this.NewRow()));
+            public PracticeStaffsRow NewPracticeStaffsRow() {
+                return ((PracticeStaffsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PatientsRow(builder);
+                return new PracticeStaffsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PatientsRow);
+                return typeof(PracticeStaffsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PatientsRowChanged != null)) {
-                    this.PatientsRowChanged(this, new PatientsRowChangeEvent(((PatientsRow)(e.Row)), e.Action));
+                if ((this.PracticeStaffsRowChanged != null)) {
+                    this.PracticeStaffsRowChanged(this, new PracticeStaffsRowChangeEvent(((PracticeStaffsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -516,8 +559,8 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PatientsRowChanging != null)) {
-                    this.PatientsRowChanging(this, new PatientsRowChangeEvent(((PatientsRow)(e.Row)), e.Action));
+                if ((this.PracticeStaffsRowChanging != null)) {
+                    this.PracticeStaffsRowChanging(this, new PracticeStaffsRowChangeEvent(((PracticeStaffsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -525,8 +568,8 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PatientsRowDeleted != null)) {
-                    this.PatientsRowDeleted(this, new PatientsRowChangeEvent(((PatientsRow)(e.Row)), e.Action));
+                if ((this.PracticeStaffsRowDeleted != null)) {
+                    this.PracticeStaffsRowDeleted(this, new PracticeStaffsRowChangeEvent(((PracticeStaffsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -534,14 +577,14 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PatientsRowDeleting != null)) {
-                    this.PatientsRowDeleting(this, new PatientsRowChangeEvent(((PatientsRow)(e.Row)), e.Action));
+                if ((this.PracticeStaffsRowDeleting != null)) {
+                    this.PracticeStaffsRowDeleting(this, new PracticeStaffsRowChangeEvent(((PracticeStaffsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemovePatientsRow(PatientsRow row) {
+            public void RemovePracticeStaffsRow(PracticeStaffsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -568,7 +611,7 @@ namespace WindowsFormsApp1 {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PatientsDataTable";
+                attribute2.FixedValue = "PracticeStaffsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -612,115 +655,199 @@ namespace WindowsFormsApp1 {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PatientsRow : global::System.Data.DataRow {
+        public partial class PracticeStaffsRow : global::System.Data.DataRow {
             
-            private PatientsDataTable tablePatients;
+            private PracticeStaffsDataTable tablePracticeStaffs;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal PatientsRow(global::System.Data.DataRowBuilder rb) : 
+            internal PracticeStaffsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePatients = ((PatientsDataTable)(this.Table));
+                this.tablePracticeStaffs = ((PracticeStaffsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int PatientId {
+            public int StaffId {
                 get {
-                    return ((int)(this[this.tablePatients.PatientIdColumn]));
+                    return ((int)(this[this.tablePracticeStaffs.StaffIdColumn]));
                 }
                 set {
-                    this[this.tablePatients.PatientIdColumn] = value;
+                    this[this.tablePracticeStaffs.StaffIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string PatientName {
-                get {
-                    try {
-                        return ((string)(this[this.tablePatients.PatientNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PatientName\' in table \'Patients\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePatients.PatientNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Address {
+            public string StaffName {
                 get {
                     try {
-                        return ((string)(this[this.tablePatients.AddressColumn]));
+                        return ((string)(this[this.tablePracticeStaffs.StaffNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Address\' in table \'Patients\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'StaffName\' in table \'PracticeStaffs\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePatients.AddressColumn] = value;
+                    this[this.tablePracticeStaffs.StaffNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime LastVisitedDate {
+            public int Specialization {
                 get {
-                    return ((global::System.DateTime)(this[this.tablePatients.LastVisitedDateColumn]));
+                    return ((int)(this[this.tablePracticeStaffs.SpecializationColumn]));
                 }
                 set {
-                    this[this.tablePatients.LastVisitedDateColumn] = value;
+                    this[this.tablePracticeStaffs.SpecializationColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNhs {
+            public string SpecializationDesc {
                 get {
-                    return ((bool)(this[this.tablePatients.IsNhsColumn]));
+                    try {
+                        return ((string)(this[this.tablePracticeStaffs.SpecializationDescColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SpecializationDesc\' in table \'PracticeStaffs\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tablePatients.IsNhsColumn] = value;
+                    this[this.tablePracticeStaffs.SpecializationDescColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime DateOfBirth {
+            public int Status {
                 get {
-                    return ((global::System.DateTime)(this[this.tablePatients.DateOfBirthColumn]));
+                    return ((int)(this[this.tablePracticeStaffs.StatusColumn]));
                 }
                 set {
-                    this[this.tablePatients.DateOfBirthColumn] = value;
+                    this[this.tablePracticeStaffs.StatusColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPatientNameNull() {
-                return this.IsNull(this.tablePatients.PatientNameColumn);
+            public string StatusDescription {
+                get {
+                    try {
+                        return ((string)(this[this.tablePracticeStaffs.StatusDescriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'StatusDescription\' in table \'PracticeStaffs\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePracticeStaffs.StatusDescriptionColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPatientNameNull() {
-                this[this.tablePatients.PatientNameColumn] = global::System.Convert.DBNull;
+            public bool ApplyLeave {
+                get {
+                    return ((bool)(this[this.tablePracticeStaffs.ApplyLeaveColumn]));
+                }
+                set {
+                    this[this.tablePracticeStaffs.ApplyLeaveColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsAddressNull() {
-                return this.IsNull(this.tablePatients.AddressColumn);
+            public System.DateTime LeaveFrom {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablePracticeStaffs.LeaveFromColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LeaveFrom\' in table \'PracticeStaffs\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePracticeStaffs.LeaveFromColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetAddressNull() {
-                this[this.tablePatients.AddressColumn] = global::System.Convert.DBNull;
+            public System.DateTime LeaveTo {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablePracticeStaffs.LeaveToColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LeaveTo\' in table \'PracticeStaffs\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePracticeStaffs.LeaveToColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStaffNameNull() {
+                return this.IsNull(this.tablePracticeStaffs.StaffNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStaffNameNull() {
+                this[this.tablePracticeStaffs.StaffNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSpecializationDescNull() {
+                return this.IsNull(this.tablePracticeStaffs.SpecializationDescColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSpecializationDescNull() {
+                this[this.tablePracticeStaffs.SpecializationDescColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStatusDescriptionNull() {
+                return this.IsNull(this.tablePracticeStaffs.StatusDescriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStatusDescriptionNull() {
+                this[this.tablePracticeStaffs.StatusDescriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLeaveFromNull() {
+                return this.IsNull(this.tablePracticeStaffs.LeaveFromColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLeaveFromNull() {
+                this[this.tablePracticeStaffs.LeaveFromColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLeaveToNull() {
+                return this.IsNull(this.tablePracticeStaffs.LeaveToColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLeaveToNull() {
+                this[this.tablePracticeStaffs.LeaveToColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -728,22 +855,22 @@ namespace WindowsFormsApp1 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class PatientsRowChangeEvent : global::System.EventArgs {
+        public class PracticeStaffsRowChangeEvent : global::System.EventArgs {
             
-            private PatientsRow eventRow;
+            private PracticeStaffsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PatientsRowChangeEvent(PatientsRow row, global::System.Data.DataRowAction action) {
+            public PracticeStaffsRowChangeEvent(PracticeStaffsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PatientsRow Row {
+            public PracticeStaffsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -771,7 +898,7 @@ namespace WindowsFormsApp1.DentalPracticeDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PatientsTableAdapter : global::System.ComponentModel.Component {
+    public partial class PracticeStaffsTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -785,7 +912,7 @@ namespace WindowsFormsApp1.DentalPracticeDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public PatientsTableAdapter() {
+        public PracticeStaffsTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -882,49 +1009,64 @@ namespace WindowsFormsApp1.DentalPracticeDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Patients";
-            tableMapping.ColumnMappings.Add("PatientId", "PatientId");
-            tableMapping.ColumnMappings.Add("PatientName", "PatientName");
-            tableMapping.ColumnMappings.Add("Address", "Address");
-            tableMapping.ColumnMappings.Add("LastVisitedDate", "LastVisitedDate");
-            tableMapping.ColumnMappings.Add("IsNhs", "IsNhs");
-            tableMapping.ColumnMappings.Add("DateOfBirth", "DateOfBirth");
+            tableMapping.DataSetTable = "PracticeStaffs";
+            tableMapping.ColumnMappings.Add("StaffId", "StaffId");
+            tableMapping.ColumnMappings.Add("StaffName", "StaffName");
+            tableMapping.ColumnMappings.Add("Specialization", "Specialization");
+            tableMapping.ColumnMappings.Add("SpecializationDesc", "SpecializationDesc");
+            tableMapping.ColumnMappings.Add("Status", "Status");
+            tableMapping.ColumnMappings.Add("StatusDescription", "StatusDescription");
+            tableMapping.ColumnMappings.Add("ApplyLeave", "ApplyLeave");
+            tableMapping.ColumnMappings.Add("LeaveFrom", "LeaveFrom");
+            tableMapping.ColumnMappings.Add("LeaveTo", "LeaveTo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Patients] WHERE (([PatientId] = @Original_PatientId) AND ([Las" +
-                "tVisitedDate] = @Original_LastVisitedDate) AND ([IsNhs] = @Original_IsNhs) AND (" +
-                "[DateOfBirth] = @Original_DateOfBirth))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[PracticeStaffs] WHERE (([StaffId] = @Original_StaffId) AND ([Specialization] = @Original_Specialization) AND ([Status] = @Original_Status) AND ([ApplyLeave] = @Original_ApplyLeave) AND ((@IsNull_LeaveFrom = 1 AND [LeaveFrom] IS NULL) OR ([LeaveFrom] = @Original_LeaveFrom)) AND ((@IsNull_LeaveTo = 1 AND [LeaveTo] IS NULL) OR ([LeaveTo] = @Original_LeaveTo)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PatientId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PatientId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastVisitedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastVisitedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsNhs", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsNhs", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateOfBirth", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfBirth", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StaffId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StaffId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Specialization", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Specialization", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ApplyLeave", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplyLeave", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LeaveFrom", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveFrom", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LeaveFrom", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveFrom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LeaveTo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveTo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LeaveTo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveTo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Patients] ([PatientName], [Address], [LastVisitedDate], [IsNhs], [DateOfBirth]) VALUES (@PatientName, @Address, @LastVisitedDate, @IsNhs, @DateOfBirth);
-SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM Patients WHERE (PatientId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[PracticeStaffs] ([StaffName], [Specialization], [SpecializationDesc], [Status], [StatusDescription], [ApplyLeave], [LeaveFrom], [LeaveTo]) VALUES (@StaffName, @Specialization, @SpecializationDesc, @Status, @StatusDescription, @ApplyLeave, @LeaveFrom, @LeaveTo);
+SELECT StaffId, StaffName, Specialization, SpecializationDesc, Status, StatusDescription, ApplyLeave, LeaveFrom, LeaveTo FROM PracticeStaffs WHERE (StaffId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PatientName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PatientName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastVisitedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastVisitedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNhs", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsNhs", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateOfBirth", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfBirth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StaffName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StaffName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Specialization", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Specialization", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpecializationDesc", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpecializationDesc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StatusDescription", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StatusDescription", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApplyLeave", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplyLeave", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LeaveFrom", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveFrom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LeaveTo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Patients] SET [PatientName] = @PatientName, [Address] = @Address, [LastVisitedDate] = @LastVisitedDate, [IsNhs] = @IsNhs, [DateOfBirth] = @DateOfBirth WHERE (([PatientId] = @Original_PatientId) AND ([LastVisitedDate] = @Original_LastVisitedDate) AND ([IsNhs] = @Original_IsNhs) AND ([DateOfBirth] = @Original_DateOfBirth));
-SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM Patients WHERE (PatientId = @PatientId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[PracticeStaffs] SET [StaffName] = @StaffName, [Specialization] = @Specialization, [SpecializationDesc] = @SpecializationDesc, [Status] = @Status, [StatusDescription] = @StatusDescription, [ApplyLeave] = @ApplyLeave, [LeaveFrom] = @LeaveFrom, [LeaveTo] = @LeaveTo WHERE (([StaffId] = @Original_StaffId) AND ([Specialization] = @Original_Specialization) AND ([Status] = @Original_Status) AND ([ApplyLeave] = @Original_ApplyLeave) AND ((@IsNull_LeaveFrom = 1 AND [LeaveFrom] IS NULL) OR ([LeaveFrom] = @Original_LeaveFrom)) AND ((@IsNull_LeaveTo = 1 AND [LeaveTo] IS NULL) OR ([LeaveTo] = @Original_LeaveTo)));
+SELECT StaffId, StaffName, Specialization, SpecializationDesc, Status, StatusDescription, ApplyLeave, LeaveFrom, LeaveTo FROM PracticeStaffs WHERE (StaffId = @StaffId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PatientName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PatientName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastVisitedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastVisitedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNhs", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsNhs", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateOfBirth", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfBirth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PatientId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PatientId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastVisitedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastVisitedDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsNhs", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsNhs", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateOfBirth", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfBirth", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PatientId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PatientId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StaffName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StaffName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Specialization", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Specialization", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpecializationDesc", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpecializationDesc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StatusDescription", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StatusDescription", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApplyLeave", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplyLeave", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LeaveFrom", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveFrom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LeaveTo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StaffId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StaffId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Specialization", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Specialization", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ApplyLeave", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApplyLeave", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LeaveFrom", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveFrom", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LeaveFrom", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveFrom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LeaveTo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveTo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LeaveTo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LeaveTo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StaffId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StaffId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -940,8 +1082,8 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM " +
-                "dbo.Patients";
+            this._commandCollection[0].CommandText = "SELECT StaffId, StaffName, Specialization, SpecializationDesc, Status, StatusDesc" +
+                "ription, ApplyLeave, LeaveFrom, LeaveTo FROM dbo.PracticeStaffs";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -949,7 +1091,7 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DentalPracticeDataSet.PatientsDataTable dataTable) {
+        public virtual int Fill(DentalPracticeDataSet.PracticeStaffsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -962,9 +1104,9 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DentalPracticeDataSet.PatientsDataTable GetData() {
+        public virtual DentalPracticeDataSet.PracticeStaffsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DentalPracticeDataSet.PatientsDataTable dataTable = new DentalPracticeDataSet.PatientsDataTable();
+            DentalPracticeDataSet.PracticeStaffsDataTable dataTable = new DentalPracticeDataSet.PracticeStaffsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -972,7 +1114,7 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DentalPracticeDataSet.PatientsDataTable dataTable) {
+        public virtual int Update(DentalPracticeDataSet.PracticeStaffsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -980,7 +1122,7 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DentalPracticeDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Patients");
+            return this.Adapter.Update(dataSet, "PracticeStaffs");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1002,11 +1144,27 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_PatientId, System.DateTime Original_LastVisitedDate, bool Original_IsNhs, System.DateTime Original_DateOfBirth) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PatientId));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_LastVisitedDate));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((bool)(Original_IsNhs));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_DateOfBirth));
+        public virtual int Delete(int Original_StaffId, int Original_Specialization, int Original_Status, bool Original_ApplyLeave, global::System.Nullable<global::System.DateTime> Original_LeaveFrom, global::System.Nullable<global::System.DateTime> Original_LeaveTo) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_StaffId));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Specialization));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Status));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((bool)(Original_ApplyLeave));
+            if ((Original_LeaveFrom.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_LeaveFrom.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LeaveTo.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_LeaveTo.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1027,22 +1185,40 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string PatientName, string Address, System.DateTime LastVisitedDate, bool IsNhs, System.DateTime DateOfBirth) {
-            if ((PatientName == null)) {
+        public virtual int Insert(string StaffName, int Specialization, string SpecializationDesc, int Status, string StatusDescription, bool ApplyLeave, global::System.Nullable<global::System.DateTime> LeaveFrom, global::System.Nullable<global::System.DateTime> LeaveTo) {
+            if ((StaffName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(PatientName));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(StaffName));
             }
-            if ((Address == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Specialization));
+            if ((SpecializationDesc == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Address));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(SpecializationDesc));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(LastVisitedDate));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(IsNhs));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(DateOfBirth));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Status));
+            if ((StatusDescription == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(StatusDescription));
+            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(ApplyLeave));
+            if ((LeaveFrom.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(LeaveFrom.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((LeaveTo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(LeaveTo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1063,27 +1239,61 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string PatientName, string Address, System.DateTime LastVisitedDate, bool IsNhs, System.DateTime DateOfBirth, int Original_PatientId, System.DateTime Original_LastVisitedDate, bool Original_IsNhs, System.DateTime Original_DateOfBirth, int PatientId) {
-            if ((PatientName == null)) {
+        public virtual int Update(string StaffName, int Specialization, string SpecializationDesc, int Status, string StatusDescription, bool ApplyLeave, global::System.Nullable<global::System.DateTime> LeaveFrom, global::System.Nullable<global::System.DateTime> LeaveTo, int Original_StaffId, int Original_Specialization, int Original_Status, bool Original_ApplyLeave, global::System.Nullable<global::System.DateTime> Original_LeaveFrom, global::System.Nullable<global::System.DateTime> Original_LeaveTo, int StaffId) {
+            if ((StaffName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(PatientName));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(StaffName));
             }
-            if ((Address == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Specialization));
+            if ((SpecializationDesc == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Address));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(SpecializationDesc));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(LastVisitedDate));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((bool)(IsNhs));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(DateOfBirth));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_PatientId));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_LastVisitedDate));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((bool)(Original_IsNhs));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_DateOfBirth));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(PatientId));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Status));
+            if ((StatusDescription == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(StatusDescription));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(ApplyLeave));
+            if ((LeaveFrom.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(LeaveFrom.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((LeaveTo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(LeaveTo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_StaffId));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Specialization));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Status));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(Original_ApplyLeave));
+            if ((Original_LeaveFrom.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_LeaveFrom.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LeaveTo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_LeaveTo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(StaffId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1104,8 +1314,8 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string PatientName, string Address, System.DateTime LastVisitedDate, bool IsNhs, System.DateTime DateOfBirth, int Original_PatientId, System.DateTime Original_LastVisitedDate, bool Original_IsNhs, System.DateTime Original_DateOfBirth) {
-            return this.Update(PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth, Original_PatientId, Original_LastVisitedDate, Original_IsNhs, Original_DateOfBirth, Original_PatientId);
+        public virtual int Update(string StaffName, int Specialization, string SpecializationDesc, int Status, string StatusDescription, bool ApplyLeave, global::System.Nullable<global::System.DateTime> LeaveFrom, global::System.Nullable<global::System.DateTime> LeaveTo, int Original_StaffId, int Original_Specialization, int Original_Status, bool Original_ApplyLeave, global::System.Nullable<global::System.DateTime> Original_LeaveFrom, global::System.Nullable<global::System.DateTime> Original_LeaveTo) {
+            return this.Update(StaffName, Specialization, SpecializationDesc, Status, StatusDescription, ApplyLeave, LeaveFrom, LeaveTo, Original_StaffId, Original_Specialization, Original_Status, Original_ApplyLeave, Original_LeaveFrom, Original_LeaveTo, Original_StaffId);
         }
     }
     
@@ -1121,7 +1331,7 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
         
         private UpdateOrderOption _updateOrder;
         
-        private PatientsTableAdapter _patientsTableAdapter;
+        private PracticeStaffsTableAdapter _practiceStaffsTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1143,12 +1353,12 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public PatientsTableAdapter PatientsTableAdapter {
+        public PracticeStaffsTableAdapter PracticeStaffsTableAdapter {
             get {
-                return this._patientsTableAdapter;
+                return this._practiceStaffsTableAdapter;
             }
             set {
-                this._patientsTableAdapter = value;
+                this._practiceStaffsTableAdapter = value;
             }
         }
         
@@ -1171,9 +1381,9 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._patientsTableAdapter != null) 
-                            && (this._patientsTableAdapter.Connection != null))) {
-                    return this._patientsTableAdapter.Connection;
+                if (((this._practiceStaffsTableAdapter != null) 
+                            && (this._practiceStaffsTableAdapter.Connection != null))) {
+                    return this._practiceStaffsTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1188,7 +1398,7 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._patientsTableAdapter != null)) {
+                if ((this._practiceStaffsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1202,12 +1412,12 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(DentalPracticeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._patientsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Patients.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._practiceStaffsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PracticeStaffs.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._patientsTableAdapter.Update(updatedRows));
+                    result = (result + this._practiceStaffsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1221,11 +1431,11 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(DentalPracticeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._patientsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Patients.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._practiceStaffsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PracticeStaffs.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._patientsTableAdapter.Update(addedRows));
+                    result = (result + this._practiceStaffsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1239,11 +1449,11 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(DentalPracticeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._patientsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Patients.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._practiceStaffsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.PracticeStaffs.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._patientsTableAdapter.Update(deletedRows));
+                    result = (result + this._practiceStaffsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1286,8 +1496,8 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._patientsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._patientsTableAdapter.Connection) == false))) {
+            if (((this._practiceStaffsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._practiceStaffsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1323,13 +1533,13 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._patientsTableAdapter != null)) {
-                    revertConnections.Add(this._patientsTableAdapter, this._patientsTableAdapter.Connection);
-                    this._patientsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._patientsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._patientsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._patientsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._patientsTableAdapter.Adapter);
+                if ((this._practiceStaffsTableAdapter != null)) {
+                    revertConnections.Add(this._practiceStaffsTableAdapter, this._practiceStaffsTableAdapter.Connection);
+                    this._practiceStaffsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._practiceStaffsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._practiceStaffsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._practiceStaffsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._practiceStaffsTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1390,9 +1600,9 @@ SELECT PatientId, PatientName, Address, LastVisitedDate, IsNhs, DateOfBirth FROM
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._patientsTableAdapter != null)) {
-                    this._patientsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._patientsTableAdapter]));
-                    this._patientsTableAdapter.Transaction = null;
+                if ((this._practiceStaffsTableAdapter != null)) {
+                    this._practiceStaffsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._practiceStaffsTableAdapter]));
+                    this._practiceStaffsTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

@@ -29,6 +29,7 @@ namespace WindowsFormsApp1.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -36,7 +37,6 @@ namespace WindowsFormsApp1.View
             this.button1 = new System.Windows.Forms.Button();
             this.textStaffId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,8 +56,23 @@ namespace WindowsFormsApp1.View
             this.dtLeaveTo = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dentalPracticeDataSet = new WindowsFormsApp1.DentalPracticeDataSet();
+            this.practiceStaffsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.practiceStaffsTableAdapter = new WindowsFormsApp1.DentalPracticeDataSetTableAdapters.PracticeStaffsTableAdapter();
+            this.staffIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specializationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specializationDescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applyLeaveDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.leaveFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.leaveToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dentalPracticeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.practiceStaffsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -135,16 +150,6 @@ namespace WindowsFormsApp1.View
             this.label4.Size = new System.Drawing.Size(21, 16);
             this.label4.TabIndex = 176;
             this.label4.Text = "Id";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(417, 102);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(765, 328);
-            this.dataGridView1.TabIndex = 193;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // ID
             // 
@@ -308,12 +313,102 @@ namespace WindowsFormsApp1.View
             this.pictureBox1.TabIndex = 211;
             this.pictureBox1.TabStop = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.staffIdDataGridViewTextBoxColumn,
+            this.staffNameDataGridViewTextBoxColumn,
+            this.specializationDataGridViewTextBoxColumn,
+            this.specializationDescDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.statusDescriptionDataGridViewTextBoxColumn,
+            this.applyLeaveDataGridViewCheckBoxColumn,
+            this.leaveFromDataGridViewTextBoxColumn,
+            this.leaveToDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.practiceStaffsBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(815, 208);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 212;
+            // 
+            // dentalPracticeDataSet
+            // 
+            this.dentalPracticeDataSet.DataSetName = "DentalPracticeDataSet";
+            this.dentalPracticeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // practiceStaffsBindingSource
+            // 
+            this.practiceStaffsBindingSource.DataMember = "PracticeStaffs";
+            this.practiceStaffsBindingSource.DataSource = this.dentalPracticeDataSet;
+            // 
+            // practiceStaffsTableAdapter
+            // 
+            this.practiceStaffsTableAdapter.ClearBeforeFill = true;
+            // 
+            // staffIdDataGridViewTextBoxColumn
+            // 
+            this.staffIdDataGridViewTextBoxColumn.DataPropertyName = "StaffId";
+            this.staffIdDataGridViewTextBoxColumn.HeaderText = "StaffId";
+            this.staffIdDataGridViewTextBoxColumn.Name = "staffIdDataGridViewTextBoxColumn";
+            this.staffIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // staffNameDataGridViewTextBoxColumn
+            // 
+            this.staffNameDataGridViewTextBoxColumn.DataPropertyName = "StaffName";
+            this.staffNameDataGridViewTextBoxColumn.HeaderText = "StaffName";
+            this.staffNameDataGridViewTextBoxColumn.Name = "staffNameDataGridViewTextBoxColumn";
+            // 
+            // specializationDataGridViewTextBoxColumn
+            // 
+            this.specializationDataGridViewTextBoxColumn.DataPropertyName = "Specialization";
+            this.specializationDataGridViewTextBoxColumn.HeaderText = "Specialization";
+            this.specializationDataGridViewTextBoxColumn.Name = "specializationDataGridViewTextBoxColumn";
+            // 
+            // specializationDescDataGridViewTextBoxColumn
+            // 
+            this.specializationDescDataGridViewTextBoxColumn.DataPropertyName = "SpecializationDesc";
+            this.specializationDescDataGridViewTextBoxColumn.HeaderText = "SpecializationDesc";
+            this.specializationDescDataGridViewTextBoxColumn.Name = "specializationDescDataGridViewTextBoxColumn";
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            // 
+            // statusDescriptionDataGridViewTextBoxColumn
+            // 
+            this.statusDescriptionDataGridViewTextBoxColumn.DataPropertyName = "StatusDescription";
+            this.statusDescriptionDataGridViewTextBoxColumn.HeaderText = "StatusDescription";
+            this.statusDescriptionDataGridViewTextBoxColumn.Name = "statusDescriptionDataGridViewTextBoxColumn";
+            // 
+            // applyLeaveDataGridViewCheckBoxColumn
+            // 
+            this.applyLeaveDataGridViewCheckBoxColumn.DataPropertyName = "ApplyLeave";
+            this.applyLeaveDataGridViewCheckBoxColumn.HeaderText = "ApplyLeave";
+            this.applyLeaveDataGridViewCheckBoxColumn.Name = "applyLeaveDataGridViewCheckBoxColumn";
+            // 
+            // leaveFromDataGridViewTextBoxColumn
+            // 
+            this.leaveFromDataGridViewTextBoxColumn.DataPropertyName = "LeaveFrom";
+            this.leaveFromDataGridViewTextBoxColumn.HeaderText = "LeaveFrom";
+            this.leaveFromDataGridViewTextBoxColumn.Name = "leaveFromDataGridViewTextBoxColumn";
+            // 
+            // leaveToDataGridViewTextBoxColumn
+            // 
+            this.leaveToDataGridViewTextBoxColumn.DataPropertyName = "LeaveTo";
+            this.leaveToDataGridViewTextBoxColumn.HeaderText = "LeaveTo";
+            this.leaveToDataGridViewTextBoxColumn.Name = "leaveToDataGridViewTextBoxColumn";
+            // 
             // StaffInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1189, 442);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -329,7 +424,6 @@ namespace WindowsFormsApp1.View
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtStaffName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
@@ -339,14 +433,15 @@ namespace WindowsFormsApp1.View
             this.Controls.Add(this.label3);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StaffInfo";
             this.Text = "StaffInfo";
             this.Load += new System.EventHandler(this.StaffInfo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dentalPracticeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.practiceStaffsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,7 +456,6 @@ namespace WindowsFormsApp1.View
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textStaffId;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -381,5 +475,18 @@ namespace WindowsFormsApp1.View
         private System.Windows.Forms.DateTimePicker dtLeaveTo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private DentalPracticeDataSet dentalPracticeDataSet;
+        private System.Windows.Forms.BindingSource practiceStaffsBindingSource;
+        private DentalPracticeDataSetTableAdapters.PracticeStaffsTableAdapter practiceStaffsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn specializationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn specializationDescDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDescriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn applyLeaveDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn leaveFromDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn leaveToDataGridViewTextBoxColumn;
     }
 }

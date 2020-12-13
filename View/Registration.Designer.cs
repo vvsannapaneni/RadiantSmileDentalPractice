@@ -41,44 +41,44 @@ namespace WindowsFormsApp1.View
             this.label3 = new System.Windows.Forms.Label();
             this.txtPatientName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Medicalhistory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastVisitedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isNhsDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dentalPracticeDataSet = new WindowsFormsApp1.DentalPracticeDataSet();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.patientsTableAdapter = new WindowsFormsApp1.DentalPracticeDataSetTableAdapters.PatientsTableAdapter();
             this.txtPatientId = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.chkIsNhs = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dentalPracticeDataSet1 = new WindowsFormsApp1.DentalPracticeDataSet1();
-            this.dentalPracticeDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtGpName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtGpAddress = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dentalPracticeDataSet1 = new WindowsFormsApp1.DentalPracticeDataSet1();
+            this.patientsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.patientsTableAdapter = new WindowsFormsApp1.DentalPracticeDataSet1TableAdapters.PatientsTableAdapter();
+            this.patientIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastVisitedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isNhsDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.medicalHistoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gpNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gpAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dentalPracticeDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dentalPracticeDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dentalPracticeDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dentalPracticeDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPatientHistory
@@ -186,90 +186,6 @@ namespace WindowsFormsApp1.View
             this.label1.TabIndex = 192;
             this.label1.Text = "Patient Name";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.patientNameDataGridViewTextBoxColumn,
-            this.dateOfBirthDataGridViewTextBoxColumn,
-            this.Column2,
-            this.addressDataGridViewTextBoxColumn,
-            this.Medicalhistory,
-            this.lastVisitedDateDataGridViewTextBoxColumn,
-            this.isNhsDataGridViewCheckBoxColumn});
-            this.dataGridView1.DataSource = this.patientsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 340);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1167, 150);
-            this.dataGridView1.TabIndex = 212;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "PatientId";
-            this.ID.HeaderText = "PatientId";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // patientNameDataGridViewTextBoxColumn
-            // 
-            this.patientNameDataGridViewTextBoxColumn.DataPropertyName = "PatientName";
-            this.patientNameDataGridViewTextBoxColumn.HeaderText = "PatientName";
-            this.patientNameDataGridViewTextBoxColumn.Name = "patientNameDataGridViewTextBoxColumn";
-            // 
-            // dateOfBirthDataGridViewTextBoxColumn
-            // 
-            this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "DateOfBirth";
-            this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "DateOfBirth";
-            this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Address";
-            this.Column2.HeaderText = "Email";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            // 
-            // Medicalhistory
-            // 
-            this.Medicalhistory.DataPropertyName = "Address";
-            this.Medicalhistory.HeaderText = "Medical History";
-            this.Medicalhistory.Name = "Medicalhistory";
-            this.Medicalhistory.ReadOnly = true;
-            // 
-            // lastVisitedDateDataGridViewTextBoxColumn
-            // 
-            this.lastVisitedDateDataGridViewTextBoxColumn.DataPropertyName = "LastVisitedDate";
-            this.lastVisitedDateDataGridViewTextBoxColumn.HeaderText = "LastVisitedDate";
-            this.lastVisitedDateDataGridViewTextBoxColumn.Name = "lastVisitedDateDataGridViewTextBoxColumn";
-            // 
-            // isNhsDataGridViewCheckBoxColumn
-            // 
-            this.isNhsDataGridViewCheckBoxColumn.DataPropertyName = "IsNhs";
-            this.isNhsDataGridViewCheckBoxColumn.HeaderText = "IsNhs";
-            this.isNhsDataGridViewCheckBoxColumn.Name = "isNhsDataGridViewCheckBoxColumn";
-            this.isNhsDataGridViewCheckBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.isNhsDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // patientsBindingSource
-            // 
-            this.patientsBindingSource.DataMember = "Patients";
-            this.patientsBindingSource.DataSource = this.dentalPracticeDataSet;
-            // 
-            // dentalPracticeDataSet
-            // 
-            this.dentalPracticeDataSet.DataSetName = "DentalPracticeDataSet";
-            this.dentalPracticeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -316,10 +232,6 @@ namespace WindowsFormsApp1.View
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // patientsTableAdapter
-            // 
-            this.patientsTableAdapter.ClearBeforeFill = true;
-            // 
             // txtPatientId
             // 
             this.txtPatientId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -364,16 +276,6 @@ namespace WindowsFormsApp1.View
             this.label6.TabIndex = 217;
             this.label6.Text = "IsNHS";
             // 
-            // dentalPracticeDataSet1
-            // 
-            this.dentalPracticeDataSet1.DataSetName = "DentalPracticeDataSet1";
-            this.dentalPracticeDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dentalPracticeDataSet1BindingSource
-            // 
-            this.dentalPracticeDataSet1BindingSource.DataSource = this.dentalPracticeDataSet1;
-            this.dentalPracticeDataSet1BindingSource.Position = 0;
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(184, 96);
@@ -404,13 +306,13 @@ namespace WindowsFormsApp1.View
             // 
             this.staffBindingSource.DataMember = "staff";
             // 
-            // textBox1
+            // txtGpName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(184, 212);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(189, 22);
-            this.textBox1.TabIndex = 220;
+            this.txtGpName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGpName.Location = new System.Drawing.Point(184, 212);
+            this.txtGpName.Name = "txtGpName";
+            this.txtGpName.Size = new System.Drawing.Size(189, 22);
+            this.txtGpName.TabIndex = 220;
             // 
             // label9
             // 
@@ -432,31 +334,137 @@ namespace WindowsFormsApp1.View
             this.label10.TabIndex = 221;
             this.label10.Text = "GpAddress";
             // 
-            // textBox3
+            // txtGpAddress
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(671, 197);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(264, 39);
-            this.textBox3.TabIndex = 223;
+            this.txtGpAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGpAddress.Location = new System.Drawing.Point(671, 197);
+            this.txtGpAddress.Multiline = true;
+            this.txtGpAddress.Name = "txtGpAddress";
+            this.txtGpAddress.Size = new System.Drawing.Size(264, 39);
+            this.txtGpAddress.TabIndex = 223;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.patientIdDataGridViewTextBoxColumn,
+            this.patientNameDataGridViewTextBoxColumn,
+            this.dateOfBirthDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.lastVisitedDateDataGridViewTextBoxColumn,
+            this.isNhsDataGridViewCheckBoxColumn,
+            this.medicalHistoryDataGridViewTextBoxColumn,
+            this.gpNameDataGridViewTextBoxColumn,
+            this.gpAddressDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.patientsBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 346);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1195, 150);
+            this.dataGridView1.TabIndex = 224;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // dentalPracticeDataSet1
+            // 
+            this.dentalPracticeDataSet1.DataSetName = "DentalPracticeDataSet1";
+            this.dentalPracticeDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // patientsBindingSource1
+            // 
+            this.patientsBindingSource1.DataMember = "Patients";
+            this.patientsBindingSource1.DataSource = this.dentalPracticeDataSet1;
+            // 
+            // patientsTableAdapter
+            // 
+            this.patientsTableAdapter.ClearBeforeFill = true;
+            // 
+            // patientIdDataGridViewTextBoxColumn
+            // 
+            this.patientIdDataGridViewTextBoxColumn.DataPropertyName = "PatientId";
+            this.patientIdDataGridViewTextBoxColumn.HeaderText = "PatientId";
+            this.patientIdDataGridViewTextBoxColumn.Name = "patientIdDataGridViewTextBoxColumn";
+            this.patientIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // patientNameDataGridViewTextBoxColumn
+            // 
+            this.patientNameDataGridViewTextBoxColumn.DataPropertyName = "PatientName";
+            this.patientNameDataGridViewTextBoxColumn.HeaderText = "PatientName";
+            this.patientNameDataGridViewTextBoxColumn.Name = "patientNameDataGridViewTextBoxColumn";
+            this.patientNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateOfBirthDataGridViewTextBoxColumn
+            // 
+            this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "DateOfBirth";
+            this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "DateOfBirth";
+            this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
+            this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastVisitedDateDataGridViewTextBoxColumn
+            // 
+            this.lastVisitedDateDataGridViewTextBoxColumn.DataPropertyName = "LastVisitedDate";
+            this.lastVisitedDateDataGridViewTextBoxColumn.HeaderText = "LastVisitedDate";
+            this.lastVisitedDateDataGridViewTextBoxColumn.Name = "lastVisitedDateDataGridViewTextBoxColumn";
+            this.lastVisitedDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // isNhsDataGridViewCheckBoxColumn
+            // 
+            this.isNhsDataGridViewCheckBoxColumn.DataPropertyName = "IsNhs";
+            this.isNhsDataGridViewCheckBoxColumn.HeaderText = "IsNhs";
+            this.isNhsDataGridViewCheckBoxColumn.Name = "isNhsDataGridViewCheckBoxColumn";
+            this.isNhsDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // medicalHistoryDataGridViewTextBoxColumn
+            // 
+            this.medicalHistoryDataGridViewTextBoxColumn.DataPropertyName = "MedicalHistory";
+            this.medicalHistoryDataGridViewTextBoxColumn.HeaderText = "MedicalHistory";
+            this.medicalHistoryDataGridViewTextBoxColumn.Name = "medicalHistoryDataGridViewTextBoxColumn";
+            this.medicalHistoryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gpNameDataGridViewTextBoxColumn
+            // 
+            this.gpNameDataGridViewTextBoxColumn.DataPropertyName = "GpName";
+            this.gpNameDataGridViewTextBoxColumn.HeaderText = "GpName";
+            this.gpNameDataGridViewTextBoxColumn.Name = "gpNameDataGridViewTextBoxColumn";
+            this.gpNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gpAddressDataGridViewTextBoxColumn
+            // 
+            this.gpAddressDataGridViewTextBoxColumn.DataPropertyName = "GpAddress";
+            this.gpAddressDataGridViewTextBoxColumn.HeaderText = "GpAddress";
+            this.gpAddressDataGridViewTextBoxColumn.Name = "gpAddressDataGridViewTextBoxColumn";
+            this.gpAddressDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1191, 513);
-            this.Controls.Add(this.textBox3);
+            this.ClientSize = new System.Drawing.Size(1195, 513);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtGpAddress);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtGpName);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.chkIsNhs);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtPatientId);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
@@ -479,14 +487,13 @@ namespace WindowsFormsApp1.View
             this.Name = "Registration";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Registration_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dentalPracticeDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dentalPracticeDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dentalPracticeDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dentalPracticeDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,32 +515,33 @@ namespace WindowsFormsApp1.View
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPatientName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private DentalPracticeDataSet dentalPracticeDataSet;
         private System.Windows.Forms.BindingSource patientsBindingSource;
-        private DentalPracticeDataSetTableAdapters.PatientsTableAdapter patientsTableAdapter;
         private System.Windows.Forms.TextBox txtPatientId;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private DentalPracticeDataSet1 dentalPracticeDataSet1;
-        private System.Windows.Forms.BindingSource dentalPracticeDataSet1BindingSource;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.CheckBox chkIsNhs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn patientNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Medicalhistory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastVisitedDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isNhsDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGpName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtGpAddress;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private DentalPracticeDataSet1 dentalPracticeDataSet1;
+        private System.Windows.Forms.BindingSource patientsBindingSource1;
+        private DentalPracticeDataSet1TableAdapters.PatientsTableAdapter patientsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patientIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patientNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastVisitedDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isNhsDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medicalHistoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gpNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gpAddressDataGridViewTextBoxColumn;
     }
 }

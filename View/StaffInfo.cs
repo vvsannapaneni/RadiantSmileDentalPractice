@@ -21,9 +21,9 @@ namespace WindowsFormsApp1.View
         }
         public IList<PracticeStaff> StaffList
         {
-
-            get { return (IList<PracticeStaff>)this.dataGridView1.DataSource; }
-            set { this.dataGridView1.DataSource = value; }
+            get;set;
+            //get { return (IList<PracticeStaff>)this.dataGridView1.DataSource; }
+            //set { this.dataGridView1.DataSource = value; }
 
         }
         public int StaffId
@@ -89,6 +89,8 @@ namespace WindowsFormsApp1.View
 
         private void StaffInfo_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dentalPracticeDataSet.PracticeStaffs' table. You can move, or remove it, as needed.
+            this.practiceStaffsTableAdapter.Fill(this.dentalPracticeDataSet.PracticeStaffs);
 
         }
 
